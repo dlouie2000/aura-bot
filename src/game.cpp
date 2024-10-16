@@ -1296,7 +1296,7 @@ void CGame::EventPlayerJoined(CPotentialPlayer* potential, CIncomingJoinPlayer* 
   // we can't just use the spoof checked realm like in EventPlayerBotCommand because the player hasn't spoof checked yet
 
   const bool AnyAdminCheck = m_Aura->m_DB->AdminCheck(joinPlayer->GetName()) || m_Aura->m_DB->RootAdminCheck(joinPlayer->GetName());
-  const bool Reserved      = IsReserved(joinPlayer->GetName()) || AnyAdminCheck || IsOwner(joinPlayer->GetName());
+  const bool Reserved      = IsReserved(joinPlayer->GetName()) || IsOwner(joinPlayer->GetName());
 
   // try to find an empty slot
 
